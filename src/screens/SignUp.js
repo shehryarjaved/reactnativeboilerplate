@@ -11,6 +11,10 @@ import { StyleSheet,Text,View,TextInput,TouchableOpacity,Button} from "react-nat
             onPress={() => navigation.navigate('SignUp')}
             title="Go to Second Page"
           />
+          <Button
+            onPress={() => navigation.navigate('Login')}
+            title="back"
+          />
     </View>
 
 

@@ -58,15 +58,19 @@ export default function Login({navigation}) {
 </TouchableOpacity>
 <TouchableOpacity style={styles.socialBtn}>
 <Image style={{width: 25, height: 25}} source={require("../assets/facebook.png")} />
-<Text onPress={()=>fblogin()} style={{color:'#134c70',fontSize:13,marginLeft:14}}>Continue with Facebook</Text>
+<Text onPress={()=>fblogin(navigation)} style={{color:'#134c70',fontSize:13,marginLeft:14}}>Continue with Facebook</Text>
 </TouchableOpacity>
 </View>
-<TouchableOpacity style={{marginTop:20}} onPress={()=> navigation.navigate('SignUp')}>          
+<TouchableOpacity style={{marginTop:10}} onPress={()=> navigation.navigate('SignUp')}>          
   <Text style={{fontSize:16,color:'#6066D0'}}>Don't have an account?</Text>
 </TouchableOpacity> 
 <TouchableOpacity  onPress={()=> work()} style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
+      <TouchableOpacity  onPress={()=>navigation.navigate("SignUp")} style={styles.loginBtn}>
+        <Text style={styles.loginText}>SignUp</Text>
+      </TouchableOpacity>
+
     </View>
   );
 }
@@ -80,42 +84,40 @@ const styles = StyleSheet.create({
   },
  
   image: {
-    marginBottom: 40,
     width:100,
-    height:100
+    height:80
     
   },
  
   inputView: {
     backgroundColor: "#FFC0CB",
     borderRadius: 30,
-    width: "70%",
-    height: 45,
-    marginBottom: 20,
- 
+    width: "60%",
+    height: 40,
+    marginTop:20,
     alignItems: "center",
   },
- 
+  loginText:{color:"#ffffff"},
   TextInput: {
-    height: 50,
+    height: 40,
     flex: 1,
     padding: 10,
     marginLeft: 20,
   },
  
   forgot_button: {
-    height: 20,
-    marginBottom: 30,
+    height: 15,
+    marginTop:5,
   },
  
   loginBtn: {
-    width: "80%",
+    width: "60%",
     borderRadius: 25,
-    height: 50,
+    height: 30,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#FF1493",
+    marginTop: 10,
+    backgroundColor: "#979ca0",
   },
   
   socialBtn:{
@@ -123,10 +125,11 @@ const styles = StyleSheet.create({
     width:'60%',
     borderRadius:20,
     fontSize:12,
-    padding:10,
-    marginTop:10,alignItems:'center',
+    padding:5,
+    marginTop:5,
+    alignItems:'center',
     justifyContent:'center',
-    height:50,
+    height:40,
     borderWidth:1,
     borderColor:'#6066D0'
 }

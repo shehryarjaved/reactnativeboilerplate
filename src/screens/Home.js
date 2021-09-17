@@ -2,6 +2,7 @@
 import React from "react";
 import { StyleSheet,Text,View,TextInput,TouchableOpacity,Button} from "react-native";
 
+import { signOut} from "../Config/action";
 
  const Home = ({ navigation }) => {
   return(
@@ -11,6 +12,11 @@ import { StyleSheet,Text,View,TextInput,TouchableOpacity,Button} from "react-nat
             onPress={() => navigation.navigate('SignUp')}
             title="Go to Second Page"
           />
+<Button
+            onPress={() => signOut(navigation)}
+            title="signOut"
+          />
+
     </View>
 
 
